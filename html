@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<title>Weather</title>
+
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(#4facfe, #00f2fe);
+    overflow: hidden;
+}
+
+.cloud {
+    width: 200px;
+    height: 60px;
+    background: white;
+    border-radius: 50px;
+    position: absolute;
+    top: 50px;
+    left: -200px;
+    animation: moveCloud 20s linear infinite;
+}
+
+@keyframes moveCloud {
+    from { left: -200px; }
+    to { left: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Weather</h1>
+
+<div id="sky" class="sky">
+    <div id="baseCloud" class="cloud"></div>
+</div>
+
+<script>
+const base = document.getElementById("baseCloud");
+const sky = document.getElementById("sky");
+
+const cloudCount = 5;
+
+for (let i = 0; i < cloudCount; i++) {
+    const clone = base.cloneNode(true);
+
+    const basePosition = (i / cloudCount) * 70;
+    const randomOffset = Math.random() * 10;
+
+    clone.style.top = (basePosition + randomOffset) + "%";
+    clone.style.left = (-200 - Math.random() * 300) + "px";
+    clone.style.animationDuration = (20 + Math.random() * 20) + "s";
+    clone.style.animationDelay = Math.random() * 5 + "s";
+
+    sky.appendChild(clone);
+}
+</script>
+<script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+           data-location-id=""
+           data-language="EN"
+           data-unit-system="IMPERIAL"
+           data-skin="light"
+           data-widget-type="summary"
+           style="width: 100%; max-width: 500px; padding-bottom:22px; position:relative; margin: 0 auto;"
+        >
+          <a
+            href="https://weather.tomorrow.io/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by Tomorrow.io"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
+<script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+           data-location-id=""
+           data-language="EN"
+           data-unit-system="IMPERIAL"
+           data-skin="light"
+           data-widget-type="upcoming"
+           style="width: 100%; max-width: 500px; padding-bottom:22px; position:relative; margin: 0 auto;"
+        >
+          <a
+            href="https://weather.tomorrow.io/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by Tomorrow.io"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
+</script>
+<script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+           data-location-id="112048,131517,112525,122795,120784,128587"
+           data-language="EN"
+           data-unit-system="IMPERIAL"
+           data-skin="light"
+           data-widget-type="current6"
+           style="width: 100%; max-width: 500px; padding-bottom:22px; position:relative; margin: 0 auto;"
+        >
+          <a
+            href="https://weather.tomorrow.io/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by Tomorrow.io"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
+</body>
+</html>
